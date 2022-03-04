@@ -1,5 +1,10 @@
 export type Lang = {
   name: string;
-  maintenanceHeadline: string;
-  maintenanceSubline: string;
+  maintenance: {
+    title: string;
+    subtitle: string;
+  };
+  navbar: {
+    subtitle: string;
+  };
 }

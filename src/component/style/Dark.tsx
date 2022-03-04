@@ -20,6 +20,20 @@ const DarkTheme: Style = {
       font-weight: 300;
       color: #F5F5F5;
     }
+  `,
+  container: styled.div`
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    background-color: #2e2e3a;
+  `,
+  navigationContainer: styled.div`
+    display: flex;
+    width: 15%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.01);
   `
 }
 

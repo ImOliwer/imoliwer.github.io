@@ -20,6 +20,20 @@ const LightTheme: Style = {
       font-weight: 300;
       color: #545454;
     }
+  `,
+  container: styled.div`
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    background-color: #F6F6F6;
+  `,
+  navigationContainer: styled.div`
+    display: flex;
+    width: 15%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #F1F1F1;
   `
 }
 

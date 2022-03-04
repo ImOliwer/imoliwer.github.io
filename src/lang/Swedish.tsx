@@ -2,8 +2,13 @@ import { Lang } from "./Lang";
 
 const Swedish: Lang = {
   name: "Swedish",
-  maintenanceHeadline: "Den här sidan är för närvarande under underhåll.",
-  maintenanceSubline: "Följ förvaret för att hållas uppdaterad."
+  maintenance: {
+    title: "Den här sidan är för närvarande under underhåll.",
+    subtitle: "Följ förvaret för att hållas uppdaterad."
+  },
+  navbar: {
+    subtitle: "Förvar Dokumentation"
+  }
 }
 
 export default Swedish;
