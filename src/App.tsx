@@ -20,17 +20,17 @@ export default function App() {
   const { theme, setTheme } = useTheme();
   const { lang, setLang } = useLang();
 
-  if (true) {
+  if (false) {
     return (
-      <theme.maintenanceContainer>
+      <theme.maintenance.container>
         <h2>{lang.maintenance.title}</h2>
         <h2 style={{ fontSize: "26px" }}>{lang.maintenance.subtitle}</h2>
-      </theme.maintenanceContainer>
+      </theme.maintenance.container>
     );
   }
 
   return (
-    <theme.container>
+    <theme.main.container>
       <Navigation downProps={{ 
         theme: { 
           current: theme, 
@@ -41,6 +41,6 @@ export default function App() {
           set: setLang
         }
       }} />
-    </theme.container>
+    </theme.main.container>
   );
 }
