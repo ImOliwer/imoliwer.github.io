@@ -116,7 +116,7 @@ const LightTheme: Style = {
             font-size: 11px;
             font-weight: 500;
             color: #6A6A6A;
-            margin-left: 8px;
+            margin-left: 12px;
             cursor: pointer;
             
             &:not(:last-child) {
