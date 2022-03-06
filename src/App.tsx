@@ -1,30 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "./component/Navigation";
 import { Style } from "./component/style/Style";
-import { useLang } from "./context/LangContext";
 import { useTheme } from "./context/ThemeContext";
-import { Lang } from "./lang/Lang";
 
 export type ChildDownProps = {
   theme: { 
     current: Style;
     set?: React.Dispatch<string>;
   };
-  lang: {
-    current: Lang;
-    set?: React.Dispatch<string>;
-  }
+  page: {
+    active: any | undefined;
+    set: React.Dispatch<any | undefined>;
+  };
 }
 
 export default function App() {
   const { theme, setTheme } = useTheme();
-  const { lang, setLang } = useLang();
+  const [activePage, setActivePage] = useState<any | undefined>();
 
-  if (false) {
+  if (true) {
     return (
       <theme.maintenance.container>
-        <h2>{lang.maintenance.title}</h2>
-        <h2 style={{ fontSize: "26px" }}>{lang.maintenance.subtitle}</h2>
+        <h2>This site is currently undergoing maintenance.</h2>
+        <h2 style={{ fontSize: "26px" }}>Follow the repository to be kept in the loop.</h2>
       </theme.maintenance.container>
     );
   }
@@ -36,11 +34,12 @@ export default function App() {
           current: theme, 
           set: setTheme
         },
-        lang: {
-          current: lang,
-          set: setLang
+        page: {
+          active: activePage,
+          set: setActivePage
         }
       }} />
+      {activePage}
     </theme.main.container>
   );
 }

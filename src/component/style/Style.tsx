@@ -2,6 +2,7 @@ import { StyledComponent } from "styled-components";
 
 type DivComponent = StyledComponent<"div", any, {}, never>;
 type H2Component = StyledComponent<"h2", any, {}, never>;
+type PComponent = StyledComponent<"p", any, {}, never>;
 
 export type Style = {
   name: string;
@@ -27,6 +28,15 @@ export type Style = {
     body: DivComponent;
     content: {
       container: DivComponent;
+      category: {
+        container: DivComponent;
+        title: PComponent;
+        item: {
+          container: DivComponent;
+          navigator: PComponent;
+          section: PComponent;
+        }
+      };
     };
     divider: DivComponent;
     footer: {

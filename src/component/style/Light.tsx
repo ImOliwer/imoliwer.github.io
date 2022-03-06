@@ -79,7 +79,52 @@ const LightTheme: Style = {
         flex-direction: column;
         flex-grow: 1;
         margin: 25px 0 25px 0;
-      `
+      `,
+      category: {
+        container: styled.div`
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        `,
+        title: styled.p`
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          font-size: 11px;
+          text-transform: uppercase;
+          color: #c5c5c5;
+          margin-bottom: 5px;
+        `,
+        item: {
+          container: styled.div`
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &:not(:last-child) {
+              margin-bottom: 2.5px;
+            }
+          `,
+          navigator: styled.p`
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #6A6A6A;
+            cursor: pointer;
+          `,
+          section: styled.p`
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: #6A6A6A;
+            margin-left: 8px;
+            cursor: pointer;
+            
+            &:not(:last-child) {
+              margin-bottom: 1px;
+            }
+          `
+        }
+      }
     },
     divider: styled.div`
       width: 100%;

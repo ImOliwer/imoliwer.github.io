@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { ChildDownProps } from "../App";
+import Group from "../data/docs/NavigationData";
 import { returnWith } from "../util/ValueHelper";
 
 export default function Navigation({ downProps }: { downProps: ChildDownProps }) {
@@ -7,34 +9,52 @@ export default function Navigation({ downProps }: { downProps: ChildDownProps })
       current: theme,
       set: setTheme
     },
-    lang: {
-      current: lang,
-      set: setLang
+    page: {
+      set: setActivePage
     }
   } = downProps;
+  const [activeItem, setActiveItem] = useState<string | undefined>();
 
   return returnWith(theme.navigation, nav => (
     <nav.container>
-      {returnWith(nav.header, header => (
-        <header.container>
-          <header.title>ImOliwer</header.title>
-          <header.subtitle>{lang.navbar.subtitle}</header.subtitle>
-        </header.container>
-      ))}
+      <nav.header.container>
+        <nav.header.title>ImOliwer</nav.header.title>
+        <nav.header.subtitle>Repository Documentation</nav.header.subtitle>
+      </nav.header.container>
       <nav.body>
         <nav.divider/>
-        {returnWith(nav.content, content => (
-          <content.container>
-            
-          </content.container>
-        ))}
+        <nav.content.container>
+          {Group.map(category => (
+            <nav.content.category.container>
+              <nav.content.category.title>
+                {category.name}
+              </nav.content.category.title>
+              {category.items.map(item => (
+                <nav.content.category.item.container>
+                  <nav.content.category.item.navigator onClick={() => {
+                    if (activeItem === item.id) {
+                      return;
+                    }  
+                    setActiveItem(item.id);
+                    setActivePage(item.page);
+                  }}>
+                    {(activeItem === item.id && item.sections.length > 0 ? "+ " : "") + item.name}
+                  </nav.content.category.item.navigator>
+                  {activeItem === item.id && item.sections.map(section => (
+                    <nav.content.category.item.section>
+                      {section.displayName}
+                    </nav.content.category.item.section>
+                  ))}
+                </nav.content.category.item.container>
+              ))}
+            </nav.content.category.container>
+          ))}
+        </nav.content.container>
         <nav.divider/>
       </nav.body>
-      {returnWith(nav.footer, footer => (
-        <footer.container>
+      <nav.footer.container>
 
-        </footer.container>
-      ))}
+      </nav.footer.container>
     </nav.container>
   ));
 }

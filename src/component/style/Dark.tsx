@@ -18,7 +18,16 @@ const DarkTheme: Style = {
     },
     body: styled.div``,
     content: {
-      container: styled.div``
+      container: styled.div``,
+      category: {
+        container: styled.div``,
+        title: styled.p``,
+        item: {
+          container: styled.div``,
+          navigator: styled.p``,
+          section: styled.p``
+        }
+      }
     },
     divider: styled.hr``,
     footer: {
