@@ -15,14 +15,17 @@ export const ForumAPINavigator: Navigable = {
   page: APIForumPage,
   sections: [
     {
+      id: "el_api_accounts/register",
       displayName: "POST /accounts/register",
       target: "#account-register"
     },
     {
+      id: "el_api_accounts/login",
       displayName: "POST /accounts/login",
       target: "#account-login"
     },
     {
+      id: "el_api_accounts/{id}",
       displayName: "GET /accounts/{id}",
       target: "#account-fetch"
     }

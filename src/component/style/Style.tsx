@@ -4,6 +4,10 @@ type DivComponent = StyledComponent<"div", any, {}, never>;
 type H2Component = StyledComponent<"h2", any, {}, never>;
 type PComponent = StyledComponent<"p", any, {}, never>;
 
+export type SectionComponent = {
+  isActive: boolean;
+}
+
 export type Style = {
   name: string;
 
@@ -34,7 +38,7 @@ export type Style = {
         item: {
           container: DivComponent;
           navigator: PComponent;
-          section: PComponent;
+          section: StyledComponent<"p", any, SectionComponent, never>;
         }
       };
     };

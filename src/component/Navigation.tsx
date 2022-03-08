@@ -10,7 +10,10 @@ export default function Navigation({ downProps }: { downProps: ChildDownProps })
       set: setTheme
     },
     page: {
-      set: setActivePage
+      setItem: setActivePage,
+
+      activeSection,
+      setSection: setActiveSection
     }
   } = downProps;
   const [activeItem, setActiveItem] = useState<string | undefined>();
@@ -41,7 +44,7 @@ export default function Navigation({ downProps }: { downProps: ChildDownProps })
                     {(activeItem === item.id && item.sections.length > 0 ? "+ " : "") + item.name}
                   </nav.content.category.item.navigator>
                   {activeItem === item.id && item.sections.map(section => (
-                    <nav.content.category.item.section>
+                    <nav.content.category.item.section isActive={activeSection === section.id}>
                       {section.displayName}
                     </nav.content.category.item.section>
                   ))}

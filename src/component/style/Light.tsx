@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Style } from './Style';
+import { SectionComponent, Style } from './Style';
 
 const LightTheme: Style = {
   name: 'Light',
@@ -111,11 +111,11 @@ const LightTheme: Style = {
             color: #6A6A6A;
             cursor: pointer;
           `,
-          section: styled.p`
+          section: styled.p<SectionComponent>`
             font-family: 'Roboto', sans-serif;
             font-size: 11px;
             font-weight: 500;
-            color: #6A6A6A;
+            color: ${props => props.isActive ? "#3456D0" : "#6A6A6A"};
             margin-left: 12px;
             cursor: pointer;
             

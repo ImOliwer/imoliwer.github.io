@@ -1,6 +1,7 @@
 import { ForumAPINavigator, ForumInstallationNavigator } from "./Forum";
 
 export type Section = {
+  id: string;
   displayName: string;
   target: string;
 };
